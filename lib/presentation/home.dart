@@ -34,7 +34,8 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title,textAlign: TextAlign.center),
+        title: Text(widget.title),
+        centerTitle: true,
       ),
       body: Column(
         children: [
@@ -76,7 +77,24 @@ class _HomeState extends State<Home> {
                           child: const Icon(Icons.restore_outlined),
                         ),
                         FloatingActionButton(
-                          onPressed: () => appProvider.increment,
+                          onPressed: () {
+                            appProvider.increment;
+                            if (appProvider.counter == 10) {
+                              showDialog(
+                                  context: context,
+                                  builder: (context) => const AlertDialog(
+                                        title: Text(
+                                          "Congratulations!",
+                                          style: TextStyle(
+                                            fontSize: 20,
+                                            color: Colors.teal,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                        content: Text("You have reached 10"),
+                                      ));
+                            }
+                          },
                           tooltip: 'Increment',
                           child: const Icon(Icons.add),
                         ),
