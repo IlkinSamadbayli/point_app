@@ -15,6 +15,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   late TextEditingController nameController;
   late TextEditingController expressionController;
+
   @override
   void initState() {
     nameController = TextEditingController();
@@ -33,7 +34,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(widget.title,textAlign: TextAlign.center),
       ),
       body: Column(
         children: [
