@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
           primaryColor: const Color(0xffD23369),
           primarySwatch: Colors.blue,
         ),
-        home: const Home(title: "Home Page"),
+        home: const Home(title: "Points App"),
       ),
     );
   }
